@@ -17,6 +17,17 @@ pub struct ColorRgb {
     pub b: u8,
 }
 
+impl ColorRgb {
+    pub fn to_arr(&self) -> ColorArray {
+        [
+            self.r as f32 / 255.0,
+            self.g as f32 / 255.0,
+            self.b as f32 / 255.0,
+            1.0
+        ]
+    }
+}
+
 #[derive(Debug, Clone, Copy)]
 pub enum Format {
     SRGB0_255,
